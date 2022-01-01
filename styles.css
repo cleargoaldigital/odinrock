@@ -4,8 +4,6 @@ html {
   
 }
 
-/* make it all fit to page*/
-
 .header {
     display: flex;
     height: 100%;
@@ -16,8 +14,6 @@ html {
     padding-top: 20px;
     
 }
-
-/* heading */ 
 
 header {
     color: rgb(70, 13, 9);
@@ -112,7 +108,7 @@ font-size: 20px;
     font-size: 20px;
     text-align: center;
     font-weight: bold;
-    font-family: sans-serif;
+    font-family: cursive;
     color: #5f0b3d;
 }
 
