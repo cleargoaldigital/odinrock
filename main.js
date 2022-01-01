@@ -18,24 +18,20 @@ resetBtn.addEventListener('click',() => location.reload());
   
 selectBtn.forEach(button => {button.addEventListener('click', getPlayerChoice)});
 
-
-
-
-
 function computerPlay () {
   let result = computerChoices[Math.floor(Math.random() * computerChoices.length)];
   return result;
 }
 
 function playRound (playerSelection, computerSelection) {
-  let roundWinCombo = `${playerSelection}-${computerSelection.value}`;
-  let playerWinCombo = ['1-0', '0-2', '2-1'];
+  let computerWin = `${playerSelection}-${computerSelection.value}`;
+  let playerWin = ['1-0', '0-2', '2-1'];
 
     if (Number(playerSelection) === computerSelection.value) {
       userScore.textContent = ++playerScore
       randomScore.textContent = ++compScore
       compareResults.textContent = "Tie!"
-    }else if (playerWinCombo.includes(roundWinCombo)) {
+    }else if (playerWin.includes(computerWin)) {
         userScore.textContent = ++playerScore
         compareResults.textContent = `You win! ${playerChoice} beats ${computerSelection.choice}`;
     }else {
