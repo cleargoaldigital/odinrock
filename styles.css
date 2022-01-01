@@ -138,3 +138,7 @@ button, h4, .scores div, #compareLabel {
   padding: 15px;
   border: 1px solid yellow;
 }
+.refresh{
+  border: 1px solid red;
+  padding: 10px;
+}
