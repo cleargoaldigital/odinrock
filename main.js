@@ -55,7 +55,7 @@ function playRound (playerSelection, computerSelection) {
 
 const winnerResults = {
   computer: ["You Lost the game to a computer!",
-    'red'],
+    'yellow'],
   player: ["You Win the game!",
     'green'],
   tie: ["The game is a Tie!",
