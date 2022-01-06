@@ -10,31 +10,29 @@
 <body>
   <section class="header">
     <header>
-      Play A Game Against Computer
+     <h1> Play A Game Against Computer</h1>
+
+     <h4>Choose from any of the 3 Weapons below:</h4>
     </header>
-    <h4>Choose from any of the 3 Weapons below</h4>
-
-
-    <p>
-      Read more about this game in a wikipedia entry <a href="https://en.wikipedia.org/wiki/Rock_paper_scissors" target="_blank">here</a>
-    </p>
+  </section>  
+<main>
     <h3>5 Lives | 3 Weapons | 2 Players!</h3>
 
     <div class="selectBtn">
-      <button id="0">Rock</button>
-      <button id="1">Paper</button>
-      <button id="2">Scissors</button>
+      <button id="0" class="btn rock">Rock</button>
+      <button id="1" class="btn paper">Paper</button>
+      <button id="2" class="btn scissors">Scissors</button>
     </div>
 
-    <div class="span">
-      <span id="playerspan">Player Score</span>
-      <span id="compspan">Computer Score</span>
+    <div class="playertag">
+      <h3>Player Score</h3>
+      <h3>Computer Score</h3>
     </div>
 
 
     <div class="scores">
-      <div id="playerScore"></div>
-      <div id="computerScore"></div>
+      <div id="playerScore">0</div>
+      <div id="computerScore">0</div>
     </div>
 
     <div>
@@ -48,6 +46,14 @@
       <button id="refresh">Play Again!</button>
     </div>
 
-  </section>
+  </main>
+
+  <p>
+    You can read more about this game in a wikipedia entry <a href="https://en.wikipedia.org/wiki/Rock_paper_scissors" target="_blank">here</a>
+  </p>
+<footer>
+  <p>This Game was written by ClearGoal Digital Solution &copy; 2022</p>
+</footer>
+
 </body>
 </html>
