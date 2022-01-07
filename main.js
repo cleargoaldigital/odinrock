@@ -32,7 +32,6 @@ weaponSelection.forEach(button => {
   button.addEventListener('click', getPlayerChoice)})
   
 
-
 // function for player choice
 
 function getPlayerChoice(e) {
@@ -51,15 +50,20 @@ function computerPlay() {
 function playRound (playerSelection, computerSelection) {
   let computerWin = `${playerSelection}-${computerSelection.value}`;
   let playerWin = ['1-0', '0-2', '2-1'];
-
-  if (Number(playerSelection) === computerSelection.value) {
+  
+  if (Number(playerSelection) === computerSelection.value)
+  {
     userScore.textContent = playerScore++;
     randomScore.textContent = compScore++;
     compareResults.textContent = " This is a Tie!"
-  } else if (playerWin.includes(computerWin)) {
+    }
+    else if (playerWin.includes(computerWin))
+  {
     userScore.textContent = playerScore++;
     compareResults.textContent = `You win! ${playerChoice} beats ${computerSelection.choice}`;
-  } else {
+  }
+  else
+  {
     randomScore.textContent = compScore++;
     compareResults.textContent = `You lose! ${computerSelection.choice} beats ${playerChoice}`;
   }
