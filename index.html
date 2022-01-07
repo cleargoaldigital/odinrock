@@ -8,23 +8,25 @@
 </head>
 
 <body>
-  <section class="header">
-    <header>
-     <h1> Play A Game Against Computer</h1>
+  
+     <h1>Play Against Computer</h1>
 
-     <h4>Choose from any of the 3 Weapons below:</h4>
-    </header>
-  </section>  
 <main>
-    <h3>5 Lives | 3 Weapons | 2 Players!</h3>
+    <h2><span class="live">5 Lives</span> | <span class="weapon">3 Weapons</span> | <span class="player">2 Players</span></h2>
 
-    <div class="selectBtn">
-      <button id="0" class="btn rock">Rock</button>
-      <button id="1" class="btn paper">Paper</button>
-      <button id="2" class="btn scissors">Scissors</button>
+    <div class="button container">
+      <div class="buttons">
+      <figure id="0" class="btn rock">
+      <img src="images/rock.jpg" /><figcaption>Rock</figcaption>
+      </figure>
+      <figure id="1" class="btn paper">
+        <img src="images/paper.jpg" /><figcaption>Paper</figcaption></figure>
+      <figure id="2" class="btn scissors">
+        <img src="images/scissors.jpg" /><figcaption>Scissors</figcaption></figure>
     </div>
+  </div>
 
-    <div class="playertag">
+    <div class="players container">
       <h3>Player Score</h3>
       <h3>Computer Score</h3>
     </div>
@@ -36,23 +38,30 @@
     </div>
 
     <div>
-      <span id="results">Results</span>
+      <h4 class="comment">Commentary</h4>
     </div>
 
 
-    <div id="compareResults"></div>
-
-    <div class="refresh">
-      <button id="refresh">Play Again!</button>
+    <div class="resultcontainer">
+      <div id="compareResults"></div>
     </div>
 
-  </main>
+  <div class="refresh container">
+    <button id="refresh">Play Again!</button>
+  </div>
 
-  <p>
+     
+
+
+  
+
+  <p class="footnote">
     You can read more about this game in a wikipedia entry <a href="https://en.wikipedia.org/wiki/Rock_paper_scissors" target="_blank">here</a>
   </p>
+
+</main>
 <footer>
-  <p>This Game was written by ClearGoal Digital Solution &copy; 2022</p>
+  <p>ClearGoal Digital Solution &copy; 2022</p>
 </footer>
 
 </body>

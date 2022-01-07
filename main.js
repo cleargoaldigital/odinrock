@@ -1,3 +1,5 @@
+// initializing values of scores
+
 let playerScore = 0;
 let compScore = 0;
 let playerChoice;
@@ -32,13 +34,7 @@ weaponSelection.forEach(button => {
   button.addEventListener('click', getPlayerChoice)})
   
 
-// function for player choice
 
-function getPlayerChoice(e) {
-  let playerSelection = (e.target.id);
-  playerChoice = e.target.textContent;
-  playRound(playerSelection, computerPlay());
-}
 
 // function for computer choice
 
@@ -47,35 +43,36 @@ function computerPlay() {
   return computerScore;
 }
 
+// function for rounds of play
 function playRound (playerSelection, computerSelection) {
   let computerWin = `${playerSelection}-${computerSelection.value}`;
-  let playerWin = ['1-0', '0-2', '2-1'];
-  
-  if (Number(playerSelection) === computerSelection.value)
-  {
-    userScore.textContent = playerScore++;
-    randomScore.textContent = compScore++;
-    compareResults.textContent = " This is a Tie!"
-    }
-    else if (playerWin.includes(computerWin))
-  {
-    userScore.textContent = playerScore++;
+  let playerWin = ['1-0',
+    '0-2',
+    '2-1'];
+
+  if (Number(playerSelection) === computerSelection.value) {
+    userScore.textContent = ++playerScore
+    randomScore.textContent = ++compScore
+    compareResults.textContent = "Tie!"
+  }
+  else if (playerWin.includes(computerWin)) {
+    userScore.textContent = ++playerScore
     compareResults.textContent = `You win! ${playerChoice} beats ${computerSelection.choice}`;
   }
-  else
-  {
-    randomScore.textContent = compScore++;
+  else {
+    randomScore.textContent = ++compScore
     compareResults.textContent = `You lose! ${computerSelection.choice} beats ${playerChoice}`;
   }
   checkWinner();
 }
 
+
 const winnerResults = {
-  computer: ["You have lost the game to the computer!",
-    'yellow'],
-  player: ["You have won the game!",
+  computer: ["Sorry, you've lost the game to the computer! Try again!",
+    'red'],
+  player: ["You've won the game! Congratulations!",
     'green'],
-  tie: ["The game is a Tie!",
+  tie: ["The game has ended in a Tie!",
     'blue']
 }
 
@@ -99,3 +96,10 @@ function updateWinner(winner) {
   });
 }
 
+// function for player choice
+
+function getPlayerChoice(e) {
+  let playerSelection = (e.target.id);
+  playerChoice = e.target.textContent;
+  playRound(playerSelection, computerPlay());
+}
