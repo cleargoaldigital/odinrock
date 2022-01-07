@@ -1,38 +1,49 @@
+// initializing values of scores
+
 let playerScore = 0;
 let compScore = 0;
 let playerChoice;
 
-let computerChoices = [{
+// set computer choices in an array
+
+let computerChoices = [
+  {
   choice: 'Rock',
   value: 0
-}, {
+},
+{
   choice: 'Paper',
   value: 1
-}, {
+},
+{
   choice: 'Scissors',
   value: 2
 }];
 
 // Buttons to update/reset scores for user and computer
 
-const selectBtn = document.querySelectorAll('div.selectBtn button');
+const weaponSelection = document.querySelectorAll('.btn');
 const userScore = document.querySelector('#playerScore');
 const randomScore = document.querySelector('#computerScore');
 const compareResults = document.querySelector('#compareResults');
 const resetBtn = document.querySelector('#refresh');
 
-//This resets the page to restart the game
-
 resetBtn.addEventListener('click', () => location.reload());
 
-selectBtn.forEach(button => {
-  button.addEventListener('click', getPlayerChoice)});
+weaponSelection.forEach(button => {
+  button.addEventListener('click', getPlayerChoice)})
+  
 
-function computerPlay () {
-  let result = computerChoices[Math.floor(Math.random() * computerChoices.length)];
-  return result;
+
+
+// function for computer choice
+
+function computerPlay() {
+  let computerScore = computerChoices[Math.floor(Math.random() * computerChoices.length)];
+  return computerScore;
 }
 
+// function for rounds of play
 function playRound (playerSelection, computerSelection) {
   let computerWin = `${playerSelection}-${computerSelection.value}`;
   let playerWin = ['1-0',
@@ -43,22 +54,25 @@ function playRound (playerSelection, computerSelection) {
     userScore.textContent = ++playerScore
     randomScore.textContent = ++compScore
     compareResults.textContent = "Tie!"
-  } else if (playerWin.includes(computerWin)) {
+  }
+  else if (playerWin.includes(computerWin)) {
     userScore.textContent = ++playerScore
     compareResults.textContent = `You win! ${playerChoice} beats ${computerSelection.choice}`;
-  } else {
+  }
+  else {
     randomScore.textContent = ++compScore
     compareResults.textContent = `You lose! ${computerSelection.choice} beats ${playerChoice}`;
   }
   checkWinner();
 }
 
+
 const winnerResults = {
-  computer: ["You Lost the game to a computer!",
-    'yellow'],
-  player: ["You Win the game!",
+  computer: ["Sorry, you've lost the game to the computer! Try again!",
+    'red'],
+  player: ["You've won the game! Congratulations!",
     'green'],
-  tie: ["The game is a Tie!",
+  tie: ["The game has ended in a Tie!",
     'blue']
 }
 
@@ -77,10 +91,12 @@ function updateWinner(winner) {
   compareResults.textContent = winnerResults[winner][0];
   compareResults.style.color = winnerResults[winner][1];
 
-  selectBtn.forEach(button => {
+  weaponSelection.forEach(button => {
     button.removeEventListener('click', getPlayerChoice);
   });
 }
+
+// function for player choice
 
 function getPlayerChoice(e) {
   let playerSelection = (e.target.id);
